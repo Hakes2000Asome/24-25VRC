@@ -127,7 +127,7 @@ void pre_auton() {
   LA.setVelocity(100, percent);
 
   }
-}
+
 
 /**
  * Auton function, which runs the selected auton. Case 0 is the default,

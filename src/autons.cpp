@@ -27,14 +27,15 @@ void default_constants(){
  * a slower max_voltage and greater settle_error than you would otherwise.
  */
 
-task RejectRed(){
+/*task RejectRed(){
   while (--){
     Intake.spin(forward, 100, percent);
     Intake.spin(reverse, 100, percent);
   }
-}
+}*/
+
 void BLUE(){
-startTask(RejectRed);
+//startTask(RejectRed);
 RA.setPosition(0,degrees);
 LA.setPosition(0,degrees);
 Claw.setPosition(0,degrees);
