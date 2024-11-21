@@ -139,7 +139,7 @@ void pre_auton() {
 void autonomous(void) {
 
   auto_started = true;
-  RED();
+  BLUE();
   
 }
 
