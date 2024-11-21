@@ -9,10 +9,10 @@ brain  Brain;
 
 //The motor constructor takes motors as (port, ratio, reversed), so for example
 //motor LeftFront = motor(PORT1, ratio6_1, false);
-motor FL = motor(PORT1, ratio6_1, false);
-motor FR = motor(PORT2, ratio6_1, true);
-motor BL = motor(PORT3, ratio6_1, false);
-motor BR = motor(PORT4, ratio6_1, true);
+motor FL = motor(PORT1, ratio6_1, true);
+motor FR = motor(PORT2, ratio6_1, false);
+motor BL = motor(PORT3, ratio6_1, true);
+motor BR = motor(PORT4, ratio6_1, false);
 motor RA = motor(PORT17, ratio18_1, true);
 motor LA = motor(PORT14, ratio18_1, false);
 motor Claw = motor(PORT11, ratio18_1, true);
