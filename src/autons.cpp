@@ -25,7 +25,6 @@ void default_constants(){
  * Sets constants to be more effective for odom movements.
  * For functions like drive_to_point(), it's often better to have
  * a slower max_voltage and greater settle_error than you would otherwise.
- //ricky was here
  */
 
 task RejectRed(){
