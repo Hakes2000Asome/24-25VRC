@@ -119,6 +119,8 @@ void pre_auton() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   default_constants();
+
+  //Calibration
   RA.setBrake(hold);
   LA.setBrake(hold);
   Claw.setBrake(hold);
@@ -126,7 +128,7 @@ void pre_auton() {
   RA.setVelocity(100, percent);
   LA.setVelocity(100, percent);
 
-// Drive train brake status (for derek)
+  // Drive train brake status (for derek)
   FL.setBrake(coast);
   FR.setBrake(coast);
   BL.setBrake(coast);
@@ -173,60 +175,69 @@ void usercontrol(void) {
    
    /*
    used buttons:
-   y = hook grab
-   b = hook release
-   up = claw forward
-   left = claw reverse
-   right = claw out
-   left = claw in
+   y = MOGO grab
+   b = MOGO release
+   Right = Claw forward
+   Down = Claw reverse
    L1 = arm up
    L2 = arm down
    R1 = conveyor up
    R2 = conveyer down
    */
 
-   //Hook 
+    //MOGO 
+    //Grab
     if(Controller1.ButtonY.pressing()){
       Hook.set(true);
     }
+    //Release
     if(Controller1.ButtonB.pressing()){
       Hook.set(false);
     }
 
-  //Bucket
+    //Claw
+    //Reverse
     if(Controller1.ButtonDown.pressing()){
       Claw.spin(forward, 50, percent);
     }
+    //Forward
     if(Controller1.ButtonRight.pressing()){
       Claw.spin(reverse, 50, percent);
     }
+    //Stop
     if(!(Controller1.ButtonRight.pressing()||Controller1.ButtonDown.pressing())){
       Claw.stop();
     }
 
-  //arm
+    //Arm
+    //Up
     if(Controller1.ButtonL1.pressing()){
       RA.spin(forward, 50, percent);
       LA.spin(forward, 50, percent);
     }
+    //Down
     if(Controller1.ButtonL2.pressing()){
       RA.spin(reverse, 50, percent);
       LA.spin(reverse, 50, percent);
     }
+    //Stop
     if(!(Controller1.ButtonL1.pressing()||Controller1.ButtonL2.pressing()))  {
       RA.stop();
       LA.stop();
     }
 
-  //conveypr
+    //Conveyor
+    //Down
     if(Controller1.ButtonR2.pressing()){
       Conveyor.spin(forward, 100, percent);
       Intake.spin(forward, 100 ,percent);
     }
+    //Up
     if(Controller1.ButtonR1.pressing()){
       Conveyor.spin(reverse, 100, percent);
       Intake.spin(reverse, 100, percent);
     }
+    //Stop
     if(!(Controller1.ButtonR1.pressing()||Controller1.ButtonR2.pressing()))  {
       Conveyor.stop();
       Intake.stop();
