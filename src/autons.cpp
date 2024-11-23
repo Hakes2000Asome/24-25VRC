@@ -101,7 +101,16 @@ Claw.setPosition(0,degrees);
 
  void BLUEP(){
 
-
+RA.setPosition(0,degrees);
+LA.setPosition(0,degrees);
+Claw.setPosition(0,degrees);
+//turn to alliance stake
+Chassis.turn_to_angle(318);
+RA.spinToPosition(230,degrees,false);
+LA.spinToPosition(230,degrees,false);
+chassis.drive_distance(10);
+Claw.spinToPosition(-400,degrees, true);
+chassis.drive_distance(-8);
 
  }
  /*
