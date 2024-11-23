@@ -73,7 +73,7 @@ void BLUEN(){
   chassis.turn_to_angle(38);
   RA.spinToPosition(220,degrees,false);
   LA.spinToPosition(220,degrees,false);
-  chassis.drive_distance(11);
+  chassis.drive_distance(9);
   Claw.spinToPosition(-400,degrees, true);
   chassis.drive_distance(-8);
   
@@ -153,7 +153,7 @@ void BLUEP(){
   Claw.setPosition(0, degrees);
 
   // Score on alliance stake
-  chassis.turn_to_angle(-30);
+  chassis.turn_to_angle(-28);
   RA.spinToPosition(220,degrees,false);
   LA.spinToPosition(220,degrees,false);
   chassis.drive_distance(7);
