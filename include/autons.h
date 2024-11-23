@@ -9,3 +9,4 @@ void default_constants();
 
 void RED();
 void BLUE();
+void REDP();

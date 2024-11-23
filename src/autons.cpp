@@ -33,7 +33,46 @@ void default_constants(){
     Intake.spin(reverse, 100, percent);
   }
 }*/
+void REDP(){
 
+//score on alliance stake
+RA.setPosition(0, degrees);
+LA.setPosition(0, degrees);
+Claw.setPosition(0, degrees);
+chassis.turn_to_angle(32);
+RA.spinToPosition(220,degrees,false);
+LA.spinToPosition(220,degrees,false);
+chassis.drive_distance(7);
+Claw.spinToPosition(-400,degrees, true);
+chassis.drive_distance(-8);
+
+//pick up MOGO
+chassis.turn_to_angle(60);
+chassis.drive_distance(-18);
+chassis.turn_to_angle(23);
+chassis.drive_distance(-42);
+Hook.set(true);
+wait(0.01, seconds);
+
+//Pick up and score ring
+Intake.spin(reverse, 100, percent);
+Conveyor.spin(reverse, 100, percent);
+chassis.turn_to_angle(-20);
+chassis.drive_distance(19);
+
+//touch climb
+//chassis.turn_to_angle(75);
+//Claw.spinToPosition(-180,degrees,false); 
+//chassis.drive_distance(34);
+Claw.spinToPosition(-180,degrees,false); 
+//chassis.turn_to_angle(180);
+chassis.turn_to_angle(120);
+//chassis.drive_distance(10);
+chassis.drive_distance(20);
+
+
+
+}
 void BLUE(){
 //startTask(RejectRed);
 RA.setPosition(0,degrees);
