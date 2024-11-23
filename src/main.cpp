@@ -145,9 +145,12 @@ void pre_auton() {
  */
 
 void autonomous(void) {
-
   auto_started = true;
-  BLUEP();
+  //REDP - slot 1
+  //BLUEP - slot 2
+  //REDN - slot 3
+  //BLUEN - slot 4
+  REDN();
   
 }
 
