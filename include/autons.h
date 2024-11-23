@@ -7,6 +7,7 @@ extern Drive chassis;
 
 void default_constants();
 
-void RED();
-void BLUE();
+void REDN();
+void BLUEN();
 void REDP();
+void BLUEP();

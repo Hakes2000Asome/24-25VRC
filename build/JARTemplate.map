@@ -72,12 +72,17 @@ __vex_critical_section
 Discarded input sections
 
  .text          0x0000000000000000        0x0 build/src/autons.o
- .text._Z4BLUEv
-                0x0000000000000000      0x2c0 build/src/autons.o
- .ARM.exidx.text._Z4BLUEv
+ .text._Z4REDPv
+                0x0000000000000000      0x250 build/src/autons.o
+ .ARM.exidx.text._Z4REDPv
                 0x0000000000000000        0x8 build/src/autons.o
- .text._Z3REDv  0x0000000000000000      0x250 build/src/autons.o
- .ARM.exidx.text._Z3REDv
+ .text._Z5BLUENv
+                0x0000000000000000      0x2c0 build/src/autons.o
+ .ARM.exidx.text._Z5BLUENv
+                0x0000000000000000        0x8 build/src/autons.o
+ .text._Z4REDNv
+                0x0000000000000000      0x250 build/src/autons.o
+ .ARM.exidx.text._Z4REDNv
                 0x0000000000000000        0x8 build/src/autons.o
  .llvm_addrsig  0x0000000000000000        0xb build/src/autons.o
  .text          0x0000000000000000        0x0 build/src/main.o
@@ -2935,9 +2940,9 @@ Linker script and memory map
                 0x0000000003800100      0x10c build/src/autons.o
                 0x0000000003800100                default_constants()
  *fill*         0x000000000380020c        0x4 
- .text._Z4REDPv
+ .text._Z5BLUEPv
                 0x0000000003800210      0x250 build/src/autons.o
-                0x0000000003800210                REDP()
+                0x0000000003800210                BLUEP()
  .text._ZN5DriveD2Ev
                 0x0000000003800460       0x7c build/src/main.o
                 0x0000000003800460                Drive::~Drive()
@@ -4017,7 +4022,7 @@ Linker script and memory map
  *(.ARM.exidx*)
  .ARM.exidx.text._Z17default_constantsv
                 0x0000000003804c4c        0x8 build/src/autons.o
- .ARM.exidx.text._Z4REDPv
+ .ARM.exidx.text._Z5BLUEPv
                 0x0000000003804c54        0x0 build/src/autons.o
                                           0x8 (size before relaxing)
  .ARM.exidx.text._ZN5DriveD2Ev
