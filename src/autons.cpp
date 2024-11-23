@@ -34,7 +34,7 @@ void default_constants(){
   }
 }*/
 
-void BLUE(){
+void BLUEN(){
 //startTask(RejectRed);
 RA.setPosition(0,degrees);
 LA.setPosition(0,degrees);
@@ -70,7 +70,7 @@ Claw.setPosition(0,degrees);
   Claw.spinToPosition(-180,degrees,false); 
 
 }
- void RED(){
+ void REDN(){
 RA.setPosition(0,degrees);
 LA.setPosition(0,degrees);
 Claw.setPosition(0,degrees);
@@ -95,6 +95,13 @@ Claw.setPosition(0,degrees);
   chassis.turn_to_angle(260);
   Claw.spinToPosition(-190,degrees,false);
   chassis.drive_distance(35);
+
+ }
+
+
+ void BLUEP(){
+
+
 
  }
  /*
