@@ -11,3 +11,4 @@ void REDN();
 void BLUEN();
 void REDP();
 void BLUEP();
+void REDP_V2();

@@ -46,7 +46,7 @@ void REDP(){
   chassis.turn_to_angle(60);
   chassis.drive_distance(-18);
   chassis.turn_to_angle(23);
-  chassis.drive_distance(-42);
+  chassis.drive_distance(-40);
   Hook.set(true);
   wait(0.01, seconds);  
 
@@ -59,7 +59,7 @@ void REDP(){
   //Touch climb
   Claw.spinToPosition(-180,degrees,false); 
   chassis.turn_to_angle(120);
-  chassis.drive_distance(20);
+  chassis.drive_distance(24);
 }
 
 void BLUEN(){
@@ -162,9 +162,10 @@ void BLUEP(){
 
   //Pick up MOGO
   chassis.turn_to_angle(-60);
-  chassis.drive_distance(-18);
-  chassis.turn_to_angle(-32);
-  chassis.drive_distance(-43);
+  chassis.drive_distance(-15);
+  chassis.turn_to_angle(-30);
+  chassis.drive_distance(-41);s
+  chassis.drive_distance(-1);
   Hook.set(true);
   wait(0.01, seconds);
 
@@ -178,4 +179,22 @@ void BLUEP(){
   Claw.spinToPosition(-180,degrees,false); 
   chassis.turn_to_angle(-120);
   chassis.drive_distance(20);
+}
+
+void REDP_V2(){
+
+  //Grab MOGO
+  Inertial5.setHeading(30, degrees);
+  chassis.drive_distance(-53.6);
+  Hook.set(true);
+
+  //Score ring
+  chassis.turn_to_angle(-10);
+  chassis.drive_distance(18);
+
+  //score second ring
+  chassis.turn_to_angle(63);
+  chassis.drive_distance(53.6);
+
+  
 }
