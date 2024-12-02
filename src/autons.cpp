@@ -164,7 +164,7 @@ void BLUEP(){
   chassis.turn_to_angle(-60);
   chassis.drive_distance(-15);
   chassis.turn_to_angle(-30);
-  chassis.drive_distance(-41);s
+  chassis.drive_distance(-41);
   chassis.drive_distance(-1);
   Hook.set(true);
   wait(0.01, seconds);

@@ -18,11 +18,5 @@ extern motor Conveyor;
 extern inertial Inertial5;
 extern digital_out Hook;
 extern controller Controller1;
-extern rotation front;
-extern rotation sideways;
-extern distance top;
-extern limit bucketreturn;
-extern limit bucketforward;
-extern motor artemis;
 
 void  vexcodeInit( void );

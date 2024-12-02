@@ -21,12 +21,7 @@ motor Conveyor = motor(PORT8, ratio18_1, false);
 inertial Inertial5 = inertial(PORT6);
 digital_out Hook = digital_out(Brain.ThreeWirePort.A);
 controller Controller1 = controller(primary);
-rotation front = rotation(PORT20, true);
-rotation sideways = rotation(PORT19, false);
-distance top = distance(PORT18);
-limit bucketreturn = limit(Brain.ThreeWirePort.B);
-limit bucketforward = limit(Brain.ThreeWirePort.C);
-//19= color
+
 
 
 
