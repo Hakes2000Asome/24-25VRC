@@ -12,6 +12,11 @@ extern motor BL;
 extern motor BR;
 extern motor RA;
 extern motor LA;
+//new
+extern motor ML;
+extern motor MR;
+//end
+
 extern motor Claw;
 extern motor Intake;
 extern motor Conveyor;

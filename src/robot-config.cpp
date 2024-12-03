@@ -22,8 +22,10 @@ inertial Inertial5 = inertial(PORT6);
 digital_out Hook = digital_out(Brain.ThreeWirePort.A);
 controller Controller1 = controller(primary);
 
-
-
+//new
+motor ML = motor(PORT5, ratio6_1, true);
+motor MR = motor(PORT6, ratio6_1, true);
+//end
 
 //Add your devices below, and don't forget to do the same in robot-config.h:
 
