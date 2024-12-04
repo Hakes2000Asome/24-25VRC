@@ -184,17 +184,23 @@ void BLUEP(){
 void REDP_V2(){
 
   //Grab MOGO
-  Inertial5.setHeading(30, degrees);
-  chassis.drive_distance(-53.6);
+  chassis.drive_distance(-32);
   Hook.set(true);
 
   //Score ring
-  chassis.turn_to_angle(-10);
+  chassis.turn_to_angle(-90);
+  Conveyor.spin(reverse, 100, percent);
+  Intake.spin(reverse, 100, percent);
   chassis.drive_distance(18);
+  Intake.stop();
 
-  //score second ring
-  chassis.turn_to_angle(63);
-  chassis.drive_distance(53.6);
+  //Drop MOGO
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(12);
 
+  //Touch climb
+  chassis.turn_to_angle(45);
+  chassis.drive_distance(20);
+  chassis.turn_to_angle(90);
   
 }
