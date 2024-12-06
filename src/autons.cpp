@@ -34,116 +34,32 @@ void REDP(){
   LA.setPosition(0, degrees);
   Claw.setPosition(0, degrees);
 
-  //score on alliance stake
-  chassis.turn_to_angle(32);
-  RA.spinToPosition(220,degrees,false);
-  LA.spinToPosition(220,degrees,false);
-  chassis.drive_distance(7);
-  Claw.spinToPosition(-400,degrees, true);
-  chassis.drive_distance(-8);
-
-  //pick up MOGO
-  chassis.turn_to_angle(60);
-  chassis.drive_distance(-18);
-  chassis.turn_to_angle(23);
-  chassis.drive_distance(-40);
-  Hook.set(true);
-  wait(0.01, seconds);  
-
-  //Pick up and score ring
-  Intake.spin(reverse, 100, percent);
-  Conveyor.spin(reverse, 100, percent);
-  chassis.turn_to_angle(-20);
-  chassis.drive_distance(19);
-
-  //Touch climb
-  Claw.spinToPosition(-180,degrees,false); 
-  chassis.turn_to_angle(120);
-  chassis.drive_distance(24);
-}
-
-void BLUEN(){
-  
-  //Calibrate
-  RA.setPosition(0,degrees);
-  LA.setPosition(0,degrees);
-  Claw.setPosition(0,degrees);
-
-  //Score on alliance steak
-  chassis.turn_to_angle(38);
-  RA.spinToPosition(220,degrees,false);
-  LA.spinToPosition(220,degrees,false);
-  chassis.drive_distance(9);
-  Claw.spinToPosition(-400,degrees, true);
-  chassis.drive_distance(-8);
-  
   //Grab MOGO
-  chassis.turn_to_angle(22);
-  chassis.drive_distance(-31);
-  Hook.set(true); 
-
-  //Grab first ring
-  chassis.turn_to_angle(268);
-  Intake.spin(reverse, 100, percent);
-  Conveyor.spin(reverse, 100, percent);
-  chassis.drive_distance(40);
-  
-  //Grab second ring
-  chassis.turn_to_angle(170);
-  chassis.drive_distance(10);
-  
-  //Grab third ring
-  chassis.turn_to_angle(132);
-  chassis.drive_distance(8);
-  
-  //Touch climb
-  chassis.turn_to_angle(95);
-  FR.spin(forward,100,percent);
-  BR.spin(forward,100,percent);
-  FL.spin(forward,100,percent);
-  BL.spin(forward,100,percent);
-  Claw.spinToPosition(-180,degrees,false); 
-}
-
- void REDN(){
-
-  //Calibrate
-  RA.setPosition(0,degrees);
-  LA.setPosition(0,degrees);
-  Claw.setPosition(0,degrees)
-  ;
-  //Score on alliance steak
-  chassis.turn_to_angle(318);
-  RA.spinToPosition(230,degrees,false);
-  LA.spinToPosition(230,degrees,false);
-  chassis.drive_distance(10);
-  Claw.spinToPosition(-400,degrees, true);
-  chassis.drive_distance(-8);
-  
-  //Grab MOGO
-  chassis.turn_to_angle(338);
-  chassis.drive_distance(-31);
+  chassis.drive_distance(-34);
   Hook.set(true);
 
-  //Grab first ring
-  chassis.turn_to_angle(92);
-  Intake.spin(reverse, 100, percent);
+  //Score ring
+  chassis.turn_to_angle(-90);
   Conveyor.spin(reverse, 100, percent);
-  chassis.drive_distance(40);
-
-  //Grab second ring
-  chassis.turn_to_angle(190);
+  Intake.spin(reverse, 100, percent);
   chassis.drive_distance(16);
-  
-  //Grab third ring
-  chassis.turn_to_angle(210);
-  chassis.drive_distance(7);
+
+  //Drop MOGO
+  chassis.turn_to_angle(180);
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(162);
+  RA.spinToPosition(230, degrees, false);
+  LA.spinToPosition(230, degrees, false);
+  Hook.set(false);
+  Intake.stop();
+  Conveyor.stop();
 
   //Touch climb
-  chassis.turn_to_angle(260);
-  Claw.spinToPosition(-190,degrees,false);
-  chassis.drive_distance(35);
- }
+  chassis.drive_distance(32);
+  chassis.turn_to_angle(80);
+  chassis.drive_distance(6);
+  
+}
 
 void BLUEP(){
 
@@ -152,55 +68,31 @@ void BLUEP(){
   LA.setPosition(0, degrees);
   Claw.setPosition(0, degrees);
 
-  // Score on alliance stake
-  chassis.turn_to_angle(-28);
-  RA.spinToPosition(220,degrees,false);
-  LA.spinToPosition(220,degrees,false);
-  chassis.drive_distance(7);
-  Claw.spinToPosition(-400,degrees, true);
-  chassis.drive_distance(-8);
-
-  //Pick up MOGO
-  chassis.turn_to_angle(-60);
-  chassis.drive_distance(-15);
-  chassis.turn_to_angle(-30);
-  chassis.drive_distance(-41);
-  chassis.drive_distance(-1);
-  Hook.set(true);
-  wait(0.01, seconds);
-
-  //Pick up and score ring
-  Intake.spin(reverse, 100, percent);
-  Conveyor.spin(reverse, 100, percent);
-  chassis.turn_to_angle(20);
-  chassis.drive_distance(19);
-
-  //Touch climb
-  Claw.spinToPosition(-180,degrees,false); 
-  chassis.turn_to_angle(-120);
-  chassis.drive_distance(20);
-}
-
-void REDP_V2(){
-
   //Grab MOGO
-  chassis.drive_distance(-32);
+  chassis.drive_distance(-28);
+  chassis.drive_distance(-5);
   Hook.set(true);
+  chassis.drive_distance(-5);
 
   //Score ring
-  chassis.turn_to_angle(-90);
+  chassis.turn_to_angle(90);
   Conveyor.spin(reverse, 100, percent);
   Intake.spin(reverse, 100, percent);
-  chassis.drive_distance(18);
-  Intake.stop();
+  chassis.drive_distance(16);
 
   //Drop MOGO
-  chassis.turn_to_angle(0);
-  chassis.drive_distance(12);
+  chassis.turn_to_angle(-180);
+  chassis.drive_distance(-18);
+  chassis.turn_to_angle(-162);
+  RA.spinToPosition(230, degrees, false);
+  LA.spinToPosition(230, degrees, false);
+  Hook.set(false);
+  Intake.stop();
+  Conveyor.stop();
 
   //Touch climb
-  chassis.turn_to_angle(45);
-  chassis.drive_distance(20);
-  chassis.turn_to_angle(90);
+  chassis.drive_distance(32);
+  chassis.turn_to_angle(-80);
+  chassis.drive_distance(6);
   
 }

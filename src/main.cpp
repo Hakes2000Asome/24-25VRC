@@ -151,7 +151,7 @@ void autonomous(void) {
   //REDN - slot 3
   //BLUEN - slot 4
   //REDP_V2- slot 5
-  REDP_V2();
+  BLUEP();
   
 }
 
