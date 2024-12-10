@@ -35,8 +35,10 @@ void REDP(){
   Claw.setPosition(0, degrees);
 
   //Grab MOGO
-  chassis.drive_distance(-34);
+  chassis.drive_distance(-35);
+  chassis.drive_distance(-4);
   Hook.set(true);
+
 
   //Score ring
   chassis.turn_to_angle(-90);
@@ -55,8 +57,8 @@ void REDP(){
   Conveyor.stop();
 
   //Touch climb
-  chassis.drive_distance(32);
-  chassis.turn_to_angle(80);
+  chassis.drive_distance(29);
+  chassis.turn_to_angle(84);
   chassis.drive_distance(6);
   
 }
@@ -69,10 +71,9 @@ void BLUEP(){
   Claw.setPosition(0, degrees);
 
   //Grab MOGO
-  chassis.drive_distance(-28);
-  chassis.drive_distance(-5);
+  chassis.drive_distance(-29);
+  chassis.drive_distance(-7);
   Hook.set(true);
-  chassis.drive_distance(-5);
 
   //Score ring
   chassis.turn_to_angle(90);
@@ -92,7 +93,7 @@ void BLUEP(){
 
   //Touch climb
   chassis.drive_distance(32);
-  chassis.turn_to_angle(-80);
+  chassis.turn_to_angle(-84);
   chassis.drive_distance(6);
   
 }

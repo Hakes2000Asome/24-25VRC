@@ -148,9 +148,6 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  //REDN - slot 3
-  //BLUEN - slot 4
-  //REDP_V2- slot 5
   BLUEP();
   
 }
