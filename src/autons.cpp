@@ -30,9 +30,7 @@ void default_constants(){
 void REDP(){
 
   //Calibrate
-  RA.setPosition(0, degrees);
-  LA.setPosition(0, degrees);
-  Claw.setPosition(0, degrees);
+
 
   //Grab MOGO
   chassis.drive_distance(-35);
@@ -43,17 +41,13 @@ void REDP(){
   //Score ring
   chassis.turn_to_angle(-90);
   Conveyor.spin(reverse, 100, percent);
-  Intake.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
   //Drop MOGO
   chassis.turn_to_angle(180);
   chassis.drive_distance(-18);
   chassis.turn_to_angle(162);
-  RA.spinToPosition(230, degrees, false);
-  LA.spinToPosition(230, degrees, false);
   Hook.set(false);
-  Intake.stop();
   Conveyor.stop();
 
   //Touch climb
@@ -66,9 +60,6 @@ void REDP(){
 void BLUEP(){
 
   //Calibrate
-  RA.setPosition(0, degrees);
-  LA.setPosition(0, degrees);
-  Claw.setPosition(0, degrees);
 
   //Grab MOGO
   chassis.drive_distance(-29);
@@ -78,17 +69,13 @@ void BLUEP(){
   //Score ring
   chassis.turn_to_angle(90);
   Conveyor.spin(reverse, 100, percent);
-  Intake.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
   //Drop MOGO
   chassis.turn_to_angle(-180);
   chassis.drive_distance(-18);
   chassis.turn_to_angle(-162);
-  RA.spinToPosition(230, degrees, false);
-  LA.spinToPosition(230, degrees, false);
   Hook.set(false);
-  Intake.stop();
   Conveyor.stop();
 
   //Touch climb
