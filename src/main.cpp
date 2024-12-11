@@ -120,13 +120,6 @@ void pre_auton() {
   vexcodeInit();
   default_constants();
 
-  //Calibration
-  RA.setBrake(hold);
-  LA.setBrake(hold);
-  Claw.setBrake(hold);
-  Claw.setVelocity(100, percent);
-  RA.setVelocity(100, percent);
-  LA.setVelocity(100, percent);
 
   // Drive train brake status (for derek)
   FL.setBrake(coast);
