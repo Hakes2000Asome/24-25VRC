@@ -44,10 +44,10 @@ TANK_ONE_FORWARD_ROTATION,
 //You will input whatever motor names you chose when you configured your robot using the sidebar configurer, they don't have to be "Motor1" and "Motor2".
 
 //Left Motors:
-motor_group(FL, BL),
+motor_group(FL, BL, ML),
 
 //Right Motors:
-motor_group(FR, BR),
+motor_group(FR, BR, MR),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
 PORT6,
@@ -210,38 +210,19 @@ void usercontrol(void) {
       Claw.stop();
     }
 
-    //Arm
-    //Up
-    if(Controller1.ButtonL1.pressing()){
-      RA.spin(forward, 50, percent);
-      LA.spin(forward, 50, percent);
-    }
-    //Down
-    if(Controller1.ButtonL2.pressing()){
-      RA.spin(reverse, 50, percent);
-      LA.spin(reverse, 50, percent);
-    }
-    //Stop
-    if(!(Controller1.ButtonL1.pressing()||Controller1.ButtonL2.pressing()))  {
-      RA.stop();
-      LA.stop();
-    }
 
     //Conveyor
     //Down
     if(Controller1.ButtonR2.pressing()){
       Conveyor.spin(forward, 100, percent);
-      Intake.spin(forward, 100 ,percent);
     }
     //Up
     if(Controller1.ButtonR1.pressing()){
       Conveyor.spin(reverse, 100, percent);
-      Intake.spin(reverse, 100, percent);
     }
     //Stop
     if(!(Controller1.ButtonR1.pressing()||Controller1.ButtonR2.pressing()))  {
       Conveyor.stop();
-      Intake.stop();
     }
 
 
