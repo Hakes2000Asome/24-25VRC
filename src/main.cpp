@@ -196,21 +196,6 @@ void usercontrol(void) {
       Hook.set(false);
     }
 
-    //Claw
-    //Reverse
-    if(Controller1.ButtonDown.pressing()){
-      Claw.spin(forward, 50, percent);
-    }
-    //Forward
-    if(Controller1.ButtonRight.pressing()){
-      Claw.spin(reverse, 50, percent);
-    }
-    //Stop
-    if(!(Controller1.ButtonRight.pressing()||Controller1.ButtonDown.pressing())){
-      Claw.stop();
-    }
-
-
     //Conveyor
     //Down
     if(Controller1.ButtonR2.pressing()){
