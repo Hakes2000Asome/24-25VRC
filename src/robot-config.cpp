@@ -9,16 +9,14 @@ brain  Brain;
 
 //The motor constructor takes motors as (port, ratio, reversed), so for example
 //motor LeftFront = motor(PORT1, ratio6_1, false);
-motor FL = motor(PORT1, ratio6_1, true);
-motor FR = motor(PORT2, ratio6_1, false);
+motor ML = motor(PORT1, ratio6_1, true);
+motor MR = motor(PORT9, ratio6_1, false);
+motor FL = motor(PORT2, ratio6_1, true);
+motor FR = motor(PORT10, ratio6_1, false);
 motor BL = motor(PORT3, ratio6_1, true);
-motor BR = motor(PORT4, ratio6_1, false);
-motor RA = motor(PORT17, ratio18_1, true);
-motor LA = motor(PORT14, ratio18_1, false);
-motor Claw = motor(PORT11, ratio18_1, true);
-motor Intake = motor(PORT15, ratio18_1, false);
-motor Conveyor = motor(PORT8, ratio6_1, false);
-inertial Inertial5 = inertial(PORT6);
+motor BR = motor(PORT8, ratio6_1, false);
+motor Conveyor = motor(PORT7, ratio6_1, false);
+inertial Inertial5 = inertial(PORT21);
 digital_out Hook = digital_out(Brain.ThreeWirePort.A);
 controller Controller1 = controller(primary);
 

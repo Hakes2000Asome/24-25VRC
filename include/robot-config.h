@@ -8,12 +8,10 @@ extern brain Brain;
 //Add your devices below, and don't forget to do the same in robot-config.cpp:
 extern motor FL;
 extern motor FR;
+extern motor ML;
+extern motor MR;
 extern motor BL;
 extern motor BR;
-extern motor RA;
-extern motor LA;
-extern motor Claw;
-extern motor Intake;
 extern motor Conveyor;
 extern inertial Inertial5;
 extern digital_out Hook;
