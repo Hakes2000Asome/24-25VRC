@@ -53,7 +53,7 @@ motor_group(FR, BR, MR),
 PORT6,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
-3.25,
+3.125,
 
 //External ratio, must be in decimal, in the format of input teeth/output teeth.
 //If your motor has an 84-tooth gear and your wheel has a 60-tooth gear, this value will be 1.4.
@@ -157,6 +157,7 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+  chassis.drive_distance(24);
   while (true) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo

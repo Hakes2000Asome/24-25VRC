@@ -11,9 +11,9 @@ class PID
 {
 public:
   float error = 0;
-  float kp = 0;
-  float ki = 0;
-  float kd = 0;
+  float kp = 10000;
+  float ki = 1;
+  float kd = 1;
   float starti = 0;
   float settle_error = 0;
   float settle_time = 0;
