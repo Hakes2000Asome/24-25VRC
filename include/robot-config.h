@@ -16,5 +16,6 @@ extern motor Conveyor;
 extern inertial Inertial5;
 extern digital_out Hook;
 extern controller Controller1;
+extern digital_out Doinker;
 
 void  vexcodeInit( void );

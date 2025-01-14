@@ -18,6 +18,7 @@ motor BR = motor(PORT8, ratio6_1, false);
 motor Conveyor = motor(PORT7, ratio6_1, false);
 inertial Inertial5 = inertial(PORT21);
 digital_out Hook = digital_out(Brain.ThreeWirePort.A);
+digital_out Doinker = digital_out(Brain.ThreeWirePort.B);
 controller Controller1 = controller(primary);
 
 
