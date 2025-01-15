@@ -157,7 +157,7 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-  bool toggleDoinker = 0;
+  chassis.drive_distance(24);
   while (true) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
@@ -172,8 +172,10 @@ void usercontrol(void) {
    used buttons:
    y = MOGO grab
    b = MOGO release
-   Right = Claw for ward
+   Right = Claw forward
    Down = Claw reverse
+   L1 = arm up
+   L2 = arm down
    R1 = conveyor up
    R2 = conveyer down
    */
@@ -202,19 +204,6 @@ void usercontrol(void) {
       Conveyor.stop();
     }
 
-    //Doinker
-   if(Controller1.ButtonL1.pressing()){
-      toggleDoinker = !toggleDoinker;
-       while(Controller1.ButtonL1.pressing()){
-        task::sleep(10);
-       }
-    }
-    if(toggleDoinker){
-      Doinker.set(true);
-    }
-    if(!toggleDoinker){
-      Doinker.set(false);
-    }
 
     //Replace this line with chassis.control_tank(); for tank drive 
     //or chassis.control_holonomic(); for holo drive.
