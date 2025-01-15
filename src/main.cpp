@@ -157,7 +157,7 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-
+bool toggleDoinker = 0;
   while (true) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
@@ -203,6 +203,21 @@ void usercontrol(void) {
     if(!(Controller1.ButtonR1.pressing()||Controller1.ButtonR2.pressing()))  {
       Conveyor.stop();
     }
+
+        //Doinker
+   if(Controller1.ButtonL1.pressing()){
+      toggleDoinker = !toggleDoinker;
+       while(Controller1.ButtonL1.pressing()){
+        task::sleep(10);
+       }
+    }
+    if(toggleDoinker){
+      Doinker.set(true);
+    }
+    if(!toggleDoinker){
+      Doinker.set(false);
+    }
+
 
 
     //Replace this line with chassis.control_tank(); for tank drive 
