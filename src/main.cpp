@@ -44,16 +44,16 @@ TANK_ONE_FORWARD_ROTATION,
 //You will input whatever motor names you chose when you configured your robot using the sidebar configurer, they don't have to be "Motor1" and "Motor2".
 
 //Left Motors:
-motor_group(FL, BL),
+motor_group(FL, BL, ML),
 
 //Right Motors:
-motor_group(FR, BR),
+motor_group(FR, BR, MR),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
 PORT6,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
-3.25,
+3.125,
 
 //External ratio, must be in decimal, in the format of input teeth/output teeth.
 //If your motor has an 84-tooth gear and your wheel has a 60-tooth gear, this value will be 1.4.
@@ -120,13 +120,6 @@ void pre_auton() {
   vexcodeInit();
   default_constants();
 
-  //Calibration
-  RA.setBrake(hold);
-  LA.setBrake(hold);
-  Claw.setBrake(hold);
-  Claw.setVelocity(100, percent);
-  RA.setVelocity(100, percent);
-  LA.setVelocity(100, percent);
 
   // Drive train brake status (for derek)
   FL.setBrake(coast);
@@ -148,8 +141,6 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  //REDN - slot 3
-  //BLUEN - slot 4
   BLUEP();
   
 }
@@ -166,6 +157,7 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+bool toggleDoinker = 0;
   while (true) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
@@ -198,53 +190,34 @@ void usercontrol(void) {
       Hook.set(false);
     }
 
-    //Claw
-    //Reverse
-    if(Controller1.ButtonDown.pressing()){
-      Claw.spin(forward, 50, percent);
-    }
-    //Forward
-    if(Controller1.ButtonRight.pressing()){
-      Claw.spin(reverse, 50, percent);
-    }
-    //Stop
-    if(!(Controller1.ButtonRight.pressing()||Controller1.ButtonDown.pressing())){
-      Claw.stop();
-    }
-
-    //Arm
-    //Up
-    if(Controller1.ButtonL1.pressing()){
-      RA.spin(forward, 50, percent);
-      LA.spin(forward, 50, percent);
-    }
-    //Down
-    if(Controller1.ButtonL2.pressing()){
-      RA.spin(reverse, 50, percent);
-      LA.spin(reverse, 50, percent);
-    }
-    //Stop
-    if(!(Controller1.ButtonL1.pressing()||Controller1.ButtonL2.pressing()))  {
-      RA.stop();
-      LA.stop();
-    }
-
     //Conveyor
     //Down
     if(Controller1.ButtonR2.pressing()){
       Conveyor.spin(forward, 100, percent);
-      Intake.spin(forward, 100 ,percent);
     }
     //Up
     if(Controller1.ButtonR1.pressing()){
       Conveyor.spin(reverse, 100, percent);
-      Intake.spin(reverse, 100, percent);
     }
     //Stop
     if(!(Controller1.ButtonR1.pressing()||Controller1.ButtonR2.pressing()))  {
       Conveyor.stop();
-      Intake.stop();
     }
+
+        //Doinker
+   if(Controller1.ButtonL1.pressing()){
+      toggleDoinker = !toggleDoinker;
+       while(Controller1.ButtonL1.pressing()){
+        task::sleep(10);
+       }
+    }
+    if(toggleDoinker){
+      Doinker.set(true);
+    }
+    if(!toggleDoinker){
+      Doinker.set(false);
+    }
+
 
 
     //Replace this line with chassis.control_tank(); for tank drive 

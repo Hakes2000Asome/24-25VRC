@@ -18,7 +18,7 @@ Download the Code with VEXCode Pro V5.
   9. Have Fun.
 
 Download the Code with VS code and Vex extension.
-  1. On github click on code. Then click on download zip. Then unzip
+ 1. On github click on code. Then click on download zip. Then unzip
   2. Download VS code here: https://code.visualstudio.com
   3. Once the program is installed, navigate to the extensions tab. It is the button on the left of the application that has 3 blocks connected and one block that is floating away.
   4. Serch for "VEX Robotics" and install the extention with the matching name.
