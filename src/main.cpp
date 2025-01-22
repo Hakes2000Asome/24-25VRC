@@ -126,6 +126,8 @@ void pre_auton() {
   FR.setBrake(coast);
   BL.setBrake(coast);
   BR.setBrake(coast);
+  A1.setBrake(brake);
+  A2.setBrake(brake);
 
   }
 
@@ -158,6 +160,8 @@ void autonomous(void) {
 void usercontrol(void) {
   // User control code here, inside the loop
 bool toggleDoinker = 0;
+bool toggleMOGO = 0;
+bool toggleArm = 0;
   while (true) {
     // This is the main execution loop for the user control program.
     // Each time through the loop your program should update motor + servo
@@ -182,11 +186,16 @@ bool toggleDoinker = 0;
 
     //MOGO 
     //Grab
-    if(Controller1.ButtonA.pressing()){
+    if(Controller1.ButtonB.pressing()){
+      toggleMOGO = !toggleMOGO;
+       while(Controller1.ButtonB.pressing()){
+        task::sleep(10);
+       }
+    }
+    if(toggleMOGO){
       Hook.set(true);
     }
-    //Release
-    if(Controller1.ButtonB.pressing()){
+    if(!toggleMOGO){
       Hook.set(false);
     }
 
@@ -204,10 +213,10 @@ bool toggleDoinker = 0;
       Conveyor.stop();
     }
 
-        //Doinker
-   if(Controller1.ButtonL1.pressing()){
+    //Doinker
+    if(Controller1.ButtonA.pressing()){
       toggleDoinker = !toggleDoinker;
-       while(Controller1.ButtonL1.pressing()){
+       while(Controller1.ButtonA.pressing()){
         task::sleep(10);
        }
     }
@@ -216,6 +225,37 @@ bool toggleDoinker = 0;
     }
     if(!toggleDoinker){
       Doinker.set(false);
+    }
+
+    //Arm 
+    //Down
+    if(Controller1.ButtonL2.pressing()){
+      A1.spin(forward, 100, percent);
+      A2.spin(forward, 100, percent);
+    }
+
+    //Up
+    if(Controller1.ButtonL1.pressing()){
+      A1.spin(reverse, 100, percent);
+      A2.spin(reverse, 100, percent);
+    }
+
+    //location
+    if(Controller1.ButtonLeft.pressing()){
+      toggleArm = 1;
+    }
+    if(!AL.value()){
+      toggleArm = 0;
+    }
+    if(toggleArm){
+      A1.spin(forward, 100, percent);
+      A2.spin(forward, 100 ,percent);
+    }
+
+    //Stop
+    if(!(Controller1.ButtonL1.pressing()||Controller1.ButtonL2.pressing()||toggleArm))  {
+      A1.stop();
+      A2.stop();
     }
 
 

@@ -17,5 +17,8 @@ extern inertial Inertial5;
 extern digital_out Hook;
 extern controller Controller1;
 extern digital_out Doinker;
+extern motor A1;
+extern motor A2;
+extern digital_in AL;
 
 void  vexcodeInit( void );
