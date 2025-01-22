@@ -182,7 +182,7 @@ bool toggleDoinker = 0;
 
     //MOGO 
     //Grab
-    if(Controller1.ButtonY.pressing()){
+    if(Controller1.ButtonA.pressing()){
       Hook.set(true);
     }
     //Release
