@@ -122,10 +122,10 @@ void pre_auton() {
 
 
   // Drive train brake status (for derek)
-  FL.setBrake(coast);
-  FR.setBrake(coast);
-  BL.setBrake(coast);
-  BR.setBrake(coast);
+  FL.setBrake(brake);
+  FR.setBrake(brake);
+  BL.setBrake(brake);
+  BR.setBrake(brake);
   A1.setBrake(brake);
   A2.setBrake(brake);
 
@@ -143,7 +143,7 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  BLUEP();
+  SKILLS();
   
 }
 
@@ -159,6 +159,8 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
+
+chassis.turn_to_angle(90);
 bool toggleDoinker = 0;
 bool toggleMOGO = 0;
 bool toggleArm = 0;

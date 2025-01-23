@@ -9,3 +9,4 @@ void default_constants();
 
 void REDP();
 void BLUEP();
+void SKILLS();

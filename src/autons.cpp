@@ -10,9 +10,9 @@
 
 void default_constants(){
   // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
-  chassis.set_drive_constants(10, 1.5, 0, 10, 0);
-  chassis.set_heading_constants(6, .4, 0, 1, 0);
-  chassis.set_turn_constants(12, .4, .03, 3, 15);
+  chassis.set_drive_constants(10, 0.5, 0, 14, 0);
+  chassis.set_heading_constants(6, .4, 0.01, 1, 0);
+  chassis.set_turn_constants(12, 0.05, 0, 0, 0);
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
@@ -82,5 +82,53 @@ void BLUEP(){
   chassis.drive_distance(32);
   chassis.turn_to_angle(-84);
   chassis.drive_distance(6);
+  
+}
+
+void SKILLS(){
+  chassis.drive_distance(-15);
+  Hook.set(true);
+  chassis.turn_to_angle(180);
+  Conveyor.spin(reverse, 100, percent);
+  chassis.drive_distance(24);
+  chassis.turn_to_angle(90);
+  chassis.drive_distance(24);
+  chassis.turn_to_angle(150);
+  chassis.drive_distance(21);
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(48);
+  chassis.turn_to_angle(270);
+  chassis.drive_distance(12);
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(12);
+  chassis.turn_to_angle(-120);
+  chassis.drive_distance(-5);
+  Hook.set(false);
+  chassis.drive_distance(26);
+  chassis.turn_to_angle(90);
+
+  chassis.drive_distance(-48);
+  Hook.set(true);
+
+  chassis.turn_to_angle(180);
+  Conveyor.spin(reverse, 100, percent);
+  chassis.drive_distance(24);
+  chassis.turn_to_angle(-90);
+  chassis.drive_distance(24);
+  chassis.turn_to_angle(-150);
+  chassis.drive_distance(21);
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(48);
+  chassis.turn_to_angle(-270);
+  chassis.drive_distance(12);
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(12);
+  chassis.turn_to_angle(120);
+  chassis.drive_distance(-5);
+  Hook.set(false);
+  chassis.drive_distance(26);
+  chassis.turn_to_angle(-90);
+  chassis.drive_distance(-48);
+
   
 }
