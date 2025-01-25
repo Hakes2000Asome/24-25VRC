@@ -68,21 +68,27 @@ void BLUEP(){
   //Calibrate
 
   //Grab MOGO
-  chassis.drive_distance(-29);
-  chassis.drive_distance(-7);
+  chassis.drive_distance(-32); //ogvals: -29
+  chassis.drive_distance(-7); //ogvals: -7
   Hook.set(true);
 
   //Score ring
   chassis.turn_to_angle(90);
+  wait(0.5, seconds); //wait to fix curving issue??? maybe...
   Conveyor.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
   //Drop MOGO
   chassis.turn_to_angle(-180);
   chassis.drive_distance(-18);
+  wait(1, seconds); //derek conveyor timing request (the sequel)
   chassis.turn_to_angle(-162);
   Hook.set(false);
   Conveyor.stop();
+
+  //Raise Arm
+  A1.spin(reverse, 100, percent);
+  A2.spin(reverse, 100 ,percent);
 
   //Touch climb
   chassis.drive_distance(32);
