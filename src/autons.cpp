@@ -17,7 +17,7 @@ void default_constants(){
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
   chassis.set_drive_exit_conditions(1.5, 100, 1000);
-  chassis.set_turn_exit_conditions(1, 200, 700);
+  chassis.set_turn_exit_conditions(1, 200, 1000);
   chassis.set_swing_exit_conditions(1, 100, 500);
 }
 
@@ -102,14 +102,15 @@ void BLUEP(){
 void SKILLS(){
 
   //grab MOGO
-  chassis.turn_to_angle(-45);
-  chassis.drive_distance(-10);
+  chassis.turn_to_angle(-40);
+  chassis.drive_distance(-15);
   Hook.set(true);
   wait(0.2, seconds);
 
   //grab 1st ring
   Conveyor.spin(reverse, 100, percent);
   chassis.turn_to_angle(180);
+  wait(0.1, seconds);
   chassis.drive_distance(24);
 
   //grab second ring
@@ -127,7 +128,7 @@ void SKILLS(){
 
   //drop of goal
   chassis.turn_to_angle(-120);
-  chassis.drive_distance(12);
+  chassis.drive_distance(-12);
   Hook.set(false);
 
   chassis.drive_distance(26);
