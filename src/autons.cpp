@@ -47,6 +47,7 @@ void REDP(){
   //Drop MOGO
   chassis.turn_to_angle(180);
   chassis.drive_distance(-18);
+  wait(0.5, seconds); //derek conveyor timing request
   chassis.turn_to_angle(162);
   Hook.set(false);
   Conveyor.stop();
