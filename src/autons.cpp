@@ -17,7 +17,7 @@ void default_constants(){
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
   chassis.set_drive_exit_conditions(1.5, 100, 1000);
-  chassis.set_turn_exit_conditions(1, 100, 500);
+  chassis.set_turn_exit_conditions(1, 200, 700);
   chassis.set_swing_exit_conditions(1, 100, 500);
 }
 
@@ -33,15 +33,16 @@ void REDP(){
 
 
   //Grab MOGO
-  chassis.drive_distance(-35);
-  chassis.drive_distance(-4);
+  chassis.drive_distance(-23);
+  chassis.turn_to_angle(-45);
+  chassis.drive_distance(-12);
   Hook.set(true);
 
 
   //Score ring
+  Conveyor.spin(reverse, 100, percent);
   chassis.turn_to_angle(-90);
   wait(0.5, seconds); //wait function to prevent curving maybe?????
-  Conveyor.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
   //Drop MOGO
@@ -68,14 +69,15 @@ void BLUEP(){
   //Calibrate
 
   //Grab MOGO
-  chassis.drive_distance(-32); //ogvals: -29
-  chassis.drive_distance(-7); //ogvals: -7
+  chassis.drive_distance(-23);
+  chassis.turn_to_angle(45);
+  chassis.drive_distance(-12);
   Hook.set(true);
 
   //Score ring
+  Conveyor.spin(reverse, 100, percent);
   chassis.turn_to_angle(90);
   wait(0.5, seconds); //wait to fix curving issue??? maybe...
-  Conveyor.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
   //Drop MOGO
@@ -98,24 +100,36 @@ void BLUEP(){
 }
 
 void SKILLS(){
-  chassis.drive_distance(-15);
+
+  //grab MOGO
+  chassis.turn_to_angle(-45);
+  chassis.drive_distance(-10);
   Hook.set(true);
-  chassis.turn_to_angle(180);
+  wait(0.2, seconds);
+
+  //grab 1st ring
   Conveyor.spin(reverse, 100, percent);
+  chassis.turn_to_angle(180);
   chassis.drive_distance(24);
+
+  //grab second ring
   chassis.turn_to_angle(90);
   chassis.drive_distance(24);
-  chassis.turn_to_angle(150);
-  chassis.drive_distance(21);
+
+  //grab 3rd & 4th ring
   chassis.turn_to_angle(0);
-  chassis.drive_distance(48);
-  chassis.turn_to_angle(270);
+  chassis.drive_distance(36);
+
+  //grab 5th ring
+  chassis.drive_distance(-12);
+  chassis.turn_to_angle(90);
   chassis.drive_distance(12);
-  chassis.turn_to_angle(0);
-  chassis.drive_distance(12);
+
+  //drop of goal
   chassis.turn_to_angle(-120);
-  chassis.drive_distance(-5);
+  chassis.drive_distance(12);
   Hook.set(false);
+
   chassis.drive_distance(26);
   chassis.turn_to_angle(90);
 

@@ -121,7 +121,6 @@ void pre_auton() {
   default_constants();
   Inertial5.calibrate();
   task::sleep(20);
-  wait(5, seconds);
 
 
 
@@ -148,7 +147,7 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  BLUEP();
+  SKILLS();
   
 }
 
