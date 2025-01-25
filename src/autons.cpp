@@ -10,15 +10,15 @@
 
 void default_constants(){
   // Each constant set is in the form of (maxVoltage, kP, kI, kD, startI).
-  chassis.set_drive_constants(10, 0.5, 0, 14, 0);
+  chassis.set_drive_constants(10, 0.7, 0, 10, 0);
   chassis.set_heading_constants(6, .4, 0.01, 1, 0);
-  chassis.set_turn_constants(12, 0.05, 0, 0, 0);
+  chassis.set_turn_constants(12, 0.32, 0.1, 4.9, 0);
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
-  chassis.set_drive_exit_conditions(1.5, 300, 5000);
-  chassis.set_turn_exit_conditions(1, 300, 3000);
-  chassis.set_swing_exit_conditions(1, 300, 3000);
+  chassis.set_drive_exit_conditions(1.5, 100, 1000);
+  chassis.set_turn_exit_conditions(1, 100, 500);
+  chassis.set_swing_exit_conditions(1, 100, 500);
 }
 
 /**
@@ -40,6 +40,7 @@ void REDP(){
 
   //Score ring
   chassis.turn_to_angle(-90);
+  wait(0.5, seconds); //wait function to prevent curving maybe?????
   Conveyor.spin(reverse, 100, percent);
   chassis.drive_distance(16);
 
@@ -49,6 +50,10 @@ void REDP(){
   chassis.turn_to_angle(162);
   Hook.set(false);
   Conveyor.stop();
+  
+  //Raise Arm
+  A1.spin(reverse, 100, percent);
+  A2.spin(reverse, 100 ,percent);
 
   //Touch climb
   chassis.drive_distance(29);

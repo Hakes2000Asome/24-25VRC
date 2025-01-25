@@ -50,7 +50,7 @@ motor_group(FL, BL, ML),
 motor_group(FR, BR, MR),
 
 //Specify the PORT NUMBER of your inertial sensor, in PORT format (i.e. "PORT1", not simply "1"):
-PORT6,
+PORT21,
 
 //Input your wheel diameter. (4" omnis are actually closer to 4.125"):
 3.125,
@@ -58,11 +58,11 @@ PORT6,
 //External ratio, must be in decimal, in the format of input teeth/output teeth.
 //If your motor has an 84-tooth gear and your wheel has a 60-tooth gear, this value will be 1.4.
 //If the motor drives the wheel directly, this value is 1:
-0.75,
+0.77,
 
 //Gyro scale, this is what your gyro reads when you spin the robot 360 degrees.
 //For most cases 360 will do fine here, but this scale factor can be very helpful when precision is necessary.
-360,
+365,
 
 /*---------------------------------------------------------------------------*/
 /*                                  PAUSE!                                   */
@@ -119,6 +119,10 @@ void pre_auton() {
   // Initializing Robot Configuration. DO NOT REMOVE!
   vexcodeInit();
   default_constants();
+  Inertial5.calibrate();
+  task::sleep(20);
+  wait(5, seconds);
+
 
 
   // Drive train brake status (for derek)
@@ -128,6 +132,7 @@ void pre_auton() {
   BR.setBrake(brake);
   A1.setBrake(brake);
   A2.setBrake(brake);
+
 
   }
 
@@ -143,7 +148,7 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  SKILLS();
+  REDP();
   
 }
 
@@ -159,8 +164,6 @@ void autonomous(void) {
 
 void usercontrol(void) {
   // User control code here, inside the loop
-
-chassis.turn_to_angle(90);
 bool toggleDoinker = 0;
 bool toggleMOGO = 0;
 bool toggleArm = 0;
