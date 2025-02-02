@@ -147,7 +147,7 @@ void autonomous(void) {
   auto_started = true;
   //REDP - slot 1
   //BLUEP - slot 2
-  BLUEP();
+  REDP();
   
 }
 
@@ -251,9 +251,12 @@ bool toggleArm = 0;
     if(!AL.value()){
       toggleArm = 0;
     }
+    if(Controller1.ButtonRight.pressing()){
+      toggleArm = 0;
+    }
     if(toggleArm){
-      A1.spin(forward, 100, percent);
-      A2.spin(forward, 100 ,percent);
+      A1.spin(forward, 30, percent);
+      A2.spin(forward, 30 ,percent);
     }
 
     //Stop
