@@ -16,7 +16,7 @@ void default_constants(){
   chassis.set_swing_constants(12, .3, .001, 2, 15);
 
   // Each exit condition set is in the form of (settle_error, settle_time, timeout).
-  chassis.set_drive_exit_conditions(1.5, 100, 1000);
+  chassis.set_drive_exit_conditions(1.5, 100, 3000);
   chassis.set_turn_exit_conditions(1, 200, 1000);
   chassis.set_swing_exit_conditions(1, 100, 500);
 }
@@ -115,45 +115,72 @@ void SKILLS(){
 
   //grab second ring
   chassis.turn_to_angle(90);
-  chassis.drive_distance(24);
+  chassis.drive_distance(24, 90, 6, 8);
 
   //grab 3rd & 4th ring
-  chassis.turn_to_angle(0);
-  chassis.drive_distance(36);
+  chassis.turn_to_angle(5);
+  chassis.drive_distance(32, 5, 3, 8); // 36 -> 34
 
   //grab 5th ring
-  chassis.drive_distance(-12);
-  chassis.turn_to_angle(90);
+  chassis.drive_distance(-15);
+  chassis.turn_to_angle(95);
   chassis.drive_distance(12);
 
   //drop of goal
-  chassis.turn_to_angle(-120);
-  chassis.drive_distance(-12);
+  chassis.turn_to_angle(-160);
+  chassis.drive_distance(-12, -160, 4, 6);
+  wait(0.1, seconds);
+  Conveyor.spin(forward, 100, percent);
+  wait(0.3, seconds);
+  Conveyor.spin(reverse, 100, percent);
   Hook.set(false);
 
-  chassis.drive_distance(26);
-  chassis.turn_to_angle(90);
 
-  chassis.drive_distance(-48);
+//STAGE
+//TWO
+
+  //pick up 2nd goal
+  chassis.drive_distance(6);
+  chassis.turn_to_angle(93);
+  chassis.drive_distance(-73,93.5);
   Hook.set(true);
+  chassis.drive_distance(-8);
 
-  chassis.turn_to_angle(180);
-  Conveyor.spin(reverse, 100, percent);
+  //pick up 1st ring
+  chassis.turn_to_angle(190);
   chassis.drive_distance(24);
-  chassis.turn_to_angle(-90);
-  chassis.drive_distance(24);
-  chassis.turn_to_angle(-150);
-  chassis.drive_distance(21);
+
+  //pick up 2nd ring
+  chassis.turn_to_angle(-86);
+  chassis.drive_distance(22);
+
+  //pick up 3rd ring
+  chassis.turn_to_angle(-155);
+  chassis.drive_distance(20);
+
+  //pick up 4th ring
   chassis.turn_to_angle(0);
-  chassis.drive_distance(48);
+  chassis.drive_distance(36);
+  
+  //pick up 5th ring
   chassis.turn_to_angle(-270);
   chassis.drive_distance(12);
+
+  //pick up 6th ring
   chassis.turn_to_angle(0);
   chassis.drive_distance(12);
+
+  //drop goal
   chassis.turn_to_angle(120);
   chassis.drive_distance(-5);
+  wait(0.1, seconds);
+  Conveyor.spin(forward, 100, percent);
+  wait(0.3, seconds);
+  Conveyor.spin(reverse, 100, percent);
   Hook.set(false);
+
   chassis.drive_distance(26);
+
   chassis.turn_to_angle(-90);
   chassis.drive_distance(-48);
 
