@@ -142,7 +142,7 @@ void SKILLS(){
   //pick up 2nd goal
   chassis.drive_distance(6);
   chassis.turn_to_angle(93);
-  chassis.drive_distance(-73,93.5);
+  chassis.drive_distance(-74,93.5);
   Hook.set(true);
   chassis.drive_distance(-8);
 
@@ -164,15 +164,15 @@ void SKILLS(){
   
   //pick up 5th ring
   chassis.turn_to_angle(-270);
-  chassis.drive_distance(12);
+  chassis.drive_distance(10);
 
   //pick up 6th ring
   chassis.turn_to_angle(0);
-  chassis.drive_distance(12);
+  chassis.drive_distance(12,0,5,8);
 
   //drop goal
   chassis.turn_to_angle(120);
-  chassis.drive_distance(-5);
+  chassis.drive_distance(-13,110,5,8); // -12
   wait(0.1, seconds);
   Conveyor.spin(forward, 100, percent);
   wait(0.3, seconds);
@@ -181,8 +181,7 @@ void SKILLS(){
 
   chassis.drive_distance(26);
 
-  chassis.turn_to_angle(-90);
-  chassis.drive_distance(-48);
+
 
   
 }
