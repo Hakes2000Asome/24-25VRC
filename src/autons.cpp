@@ -179,9 +179,45 @@ void SKILLS(){
   Conveyor.spin(reverse, 100, percent);
   Hook.set(false);
 
+//STAGE
+//THREE
+
+ //pick up third stake
+  wait(0.3, seconds);
+  chassis.drive_distance(21);
+  chassis.turn_to_angle(-5);
+  chassis.drive_distance(-97);
+  chassis.turn_to_angle(-93);
+  chassis.drive_distance(-32);
+  Hook.set(true);
+
+  //grab first ring
+  Conveyor.spin(reverse, 100, percent);
+  chassis.turn_to_angle(-27.5);
   chassis.drive_distance(26);
 
+  //grab second ring
+  chassis.turn_to_angle(-95);
+  chassis.drive_distance(28.5);
 
+  //grab third & fourth ring
+  chassis.turn_to_angle(-180);
+  chassis.drive_distance(26, -180, 3, 8);
 
-  
+  //grab 5th ring
+  chassis.drive_distance(-25);
+  chassis.turn_to_angle(-135);
+  chassis.drive_distance(12);
+
+  //clear corner
+  Doinker.set(true);
+  wait(0.3, seconds);
+  chassis.turn_to_angle(-180);
+  chassis.turn_to_angle(-250);
+  chassis.turn_to_angle(-330);
+
+  //push mogo
+  Hook.set(false);
+  chassis.drive_distance(-24);
+
 }
