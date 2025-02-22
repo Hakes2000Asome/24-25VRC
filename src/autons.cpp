@@ -105,7 +105,6 @@ void SKILLS(){
   chassis.turn_to_angle(-40);
   chassis.drive_distance(-15);
   Hook.set(true);
-  wait(0.2, seconds);
 
   //grab 1st ring
   Conveyor.spin(reverse, 100, percent);
@@ -114,12 +113,12 @@ void SKILLS(){
   chassis.drive_distance(24);
 
   //grab second ring
-  chassis.turn_to_angle(90);
-  chassis.drive_distance(24, 90, 6, 8);
+  chassis.turn_to_angle(95);
+  chassis.drive_distance(24.5, 95, 6, 8);
 
   //grab 3rd & 4th ring
-  chassis.turn_to_angle(5);
-  chassis.drive_distance(32, 5, 3, 8); // 36 -> 34
+  chassis.turn_to_angle(11);
+  chassis.drive_distance(32, 11, 3, 8); // 36 -> 34
 
   //grab 5th ring
   chassis.drive_distance(-15);
@@ -141,7 +140,7 @@ void SKILLS(){
 
   //pick up 2nd goal
   chassis.drive_distance(6);
-  chassis.turn_to_angle(93);
+  chassis.turn_to_angle(93); // successful until here
   chassis.drive_distance(-74,93.5);
   Hook.set(true);
   chassis.drive_distance(-8);
@@ -183,10 +182,10 @@ void SKILLS(){
 //THREE
 
  //pick up third stake
-  wait(0.3, seconds);
-  chassis.drive_distance(21);
-  chassis.turn_to_angle(-5);
-  chassis.drive_distance(-97);
+  wait(0.2, seconds);
+  chassis.drive_distance(25);
+  chassis.turn_to_angle(0);
+  chassis.drive_distance(-97,0);
   chassis.turn_to_angle(-93);
   chassis.drive_distance(-32);
   Hook.set(true);
@@ -212,12 +211,11 @@ void SKILLS(){
   //clear corner
   Doinker.set(true);
   wait(0.3, seconds);
-  chassis.turn_to_angle(-180);
   chassis.turn_to_angle(-250);
   chassis.turn_to_angle(-330);
 
   //push mogo
   Hook.set(false);
-  chassis.drive_distance(-24);
+  chassis.drive_distance(-20);
 
 }
