@@ -178,6 +178,7 @@ void SKILLS(){
   Conveyor.spin(reverse, 100, percent);
   Hook.set(false);
 
+<<<<<<< HEAD
 //STAGE
 //THREE
 
@@ -193,16 +194,13 @@ void SKILLS(){
   //grab first ring
   Conveyor.spin(reverse, 100, percent);
   chassis.turn_to_angle(-27.5);
+=======
+>>>>>>> parent of d32066e (33 point auto test at comp)
   chassis.drive_distance(26);
 
-  //grab second ring
-  chassis.turn_to_angle(-95);
-  chassis.drive_distance(28.5);
 
-  //grab third & fourth ring
-  chassis.turn_to_angle(-180);
-  chassis.drive_distance(26, -180, 3, 8);
 
+<<<<<<< HEAD
   //grab 5th ring
   chassis.drive_distance(-25);
   chassis.turn_to_angle(-135);
@@ -219,3 +217,7 @@ void SKILLS(){
   chassis.drive_distance(-20);
 
 }
+=======
+  
+}
+>>>>>>> parent of d32066e (33 point auto test at comp)
